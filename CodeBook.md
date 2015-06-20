@@ -22,6 +22,9 @@ For each of the estimate variables of the feature vector from the input data set
 
 **Variables**
 
+- The units used for the accelerations (total and body) are 'g's (gravity of earth -> 9.80665 m/seg2).
+- The gyroscope units are rad/seg.
+
 Name | Description 
 ---------------------------|-----------------------------
 activity|The descriptive activity name
