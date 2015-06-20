@@ -12,7 +12,7 @@ The objective of this project is to read, clean & reshape the data from "Human A
 
 **Outputs**
   - tidy_data_summary_wide.txt (wide format)
-  - tiday_data_summary_long.txt (long format)
+  - tidy_data_summary_long.txt (long format)
   
 **Code Book**
   - CodeBook.md (describes the variables, the data, and any transformations performed to clean up the data)
