@@ -1,6 +1,6 @@
 library(data.table)
 library(dplyr)
-library(plyr)
+library(reshape2)
 
 #Prepare labels for features & activities
 feat_lab_df <- read.table("features.txt", colClass=c("character", "character"))
@@ -40,15 +40,17 @@ data_set <-  select(data_set, -(activityid))
 
 #Objective #4.Appropriately labels the data set with descriptive variable names.
 labels <- names(data_set)
-labels <- gsub("^t", "time", labels) 
-labels <- gsub("^f", "frequency", labels) 
+labels <- gsub("^t", "Time", labels) 
+labels <- gsub("^f", "Frequency", labels) 
 labels <- gsub("([XYZ])", "\\1axis", labels) 
-labels <- gsub("(Acc\\-?)", "accelerometer", labels) 
-labels <- gsub("(Gyro\\-?)", "gyroscope", labels) 
-labels <- gsub("(Mag\\-?)", "magnitude", labels) 
+labels <- gsub("(Acc\\-?)", "Accelerometer", labels) 
+labels <- gsub("(Gyro\\-?)", "Gyroscope", labels) 
+labels <- gsub("(Mag\\-?)", "Magnitude", labels) 
+labels <- gsub("mean\\(\\)", "Mean", labels)
+labels <- gsub("std\\(\\)", "Stdeviation", labels)
 labels <- gsub("[\\(\\)\\-]", "", labels)
-labels <- tolower(labels)
-labels <- gsub("(body)\\1*", "\\1", labels)
+#labels <- tolower(labels)
+labels <- gsub("(Body)\\1*", "\\1", labels)
 names(data_set) <- labels
 
 
@@ -58,6 +60,8 @@ data_melt <- melt(data_set, id = c("activity", "subject"), measure.vars = labels
 #Wide format
 data_summary1 <- dcast(data_melt, activity + subject ~ variable, mean)
 write.table(data_summary1, file="./tidy_data_summary_wide.txt", row.names=FALSE)
+
 #Narrow/Long format
+library(plyr)
 data_summary <- ddply(data_melt, .(activity, subject, variable), summarize, mean = mean(value))
 write.table(data_summary, file="./tidy_data_summary_long.txt", row.names=FALSE)
