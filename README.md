@@ -1,4 +1,5 @@
 **Overview**
+
 The objective of this project is to read, clean & reshape the data from "Human Activity Recognition Using Smartphones Dataset" provided by http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. 
 
 **Input data files**
@@ -7,7 +8,7 @@ The objective of this project is to read, clean & reshape the data from "Human A
   - activity_labels.txt & features.txt (Lables for activity & measurement features )
 
 **Data Processing**
-  - run_analysis.R 
+  - run_analysis.R (script for transforming data input data into desired output)
 
 **Outputs**
   - tidy_data_summary_wide.txt (wide format)
