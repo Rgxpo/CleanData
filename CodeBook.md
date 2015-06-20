@@ -1,8 +1,3 @@
----
-title: "Code Book"
-output: html_document
----
-
 **Overview of the input data**
 
 The input data is source from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. Here are some exceprts from the provider about the input data sets.
@@ -97,7 +92,6 @@ FrequencyBodyGyroscopeMagnitudeMean|Mean of frequency domain body angular veloci
 FrequencyBodyGyroscopeMagnitudeStdeviation|Standard deviation of frequency domain body angular velocity magnitude
 FrequencyBodyGyroscopeJerkMagnitudeMean|Mean of frequency domain body angular jerk magnitude
 FrequencyBodyGyroscopeJerkMagnitudeStdeviation|Standard deviation of frequency domain body angular jerk magnitude
-
 
 **Data Cleaning and transformations**
 
