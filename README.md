@@ -16,3 +16,10 @@ The objective of this project is to read, clean & reshape the data from "Human A
   
 **Code Book**
   - CodeBook.md (describes the variables, the data, and any transformations performed to clean up the data)
+
+**Running the code**
+  1. Download data set from http://archive.ics.uci.edu/ml/machine-learning-databases/00240/
+  2. Copy all the "Input data files" to the working directory (R current directory)
+  3. Copy run_anlysis.R into the working directory (R current directory)
+  4. Run run_analysis.R (source "run_analysis.R")
+  5. Check the "Outputs"
